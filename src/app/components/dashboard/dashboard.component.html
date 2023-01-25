@@ -1,1 +1,68 @@
-<p>dashboard works!</p>
+<app-navbar></app-navbar>
+
+<div class="container">
+    
+    <mat-toolbar class="container-toolbar">
+        <span></span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="material-symbols-outlined" (click)="openDialogColumns()" matTooltip="Configurar Tabla">
+            <mat-icon>settings</mat-icon>
+        </button>
+    </mat-toolbar>
+    <div class="example-container mat-elevation-z3">
+      <div class="example-table-container">  
+            <table  mat-table [dataSource]="dataSource">
+          
+              <!-- Position Column -->
+              <ng-container matColumnDef="nombre">
+                <th mat-header-cell cdkDrag *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+              </ng-container>
+          
+              <!-- Name Column -->
+              <ng-container matColumnDef="precio">
+                <th mat-header-cell cdkDrag *matHeaderCellDef> Precio </th>
+                <td mat-cell *matCellDef="let element"> {{element.precio | currency:"EUR":"symbol"}} </td>
+              </ng-container>
+          
+              <!-- Weight Column -->
+              <ng-container matColumnDef="formato">
+                <th mat-header-cell cdkDrag *matHeaderCellDef> Formato </th>
+                <td mat-cell *matCellDef="let element"> {{element.formato}} </td>
+              </ng-container>
+          
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="marca">
+                <th mat-header-cell cdkDrag *matHeaderCellDef> Marca </th>
+                <td mat-cell *matCellDef="let element"> {{element.marca}} </td>
+              </ng-container>
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="acciones">
+                <th class="w100"mat-header-cell *matHeaderCellDef style="text-align: right"> Acciones </th>
+                <td mat-cell *matCellDef="let element; let i =index" style="text-align: right">
+                    <a class="pointer" (click)="openDialog(i)" style="color: #e15639;" matTooltip="Borrar Producto">
+                        <mat-icon>delete</mat-icon>
+                    </a>
+                </td>
+              </ng-container>                        
+              <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table> 
+      </div>
+            <mat-toolbar > 
+                  <mat-toolbar-row >
+                    <mat-paginator [length]="100"
+                            [showFirstLastButtons]="true"
+                            [pageSize]="25"
+                            [pageSizeOptions]="[5, 10, 25, 100]"
+                            aria-label="Select page">
+                    </mat-paginator>
+                  </mat-toolbar-row>
+            </mat-toolbar>
+    </div>
+    
+      
+        
+</div>
+<app-footer></app-footer>
+
