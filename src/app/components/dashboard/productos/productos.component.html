@@ -1,1 +1,47 @@
-<p>productos works!</p>
+
+<div class="container">
+    <mat-card class="mat-card">
+        
+        <mat-card-content>
+            <h1 mat-dialog-title>Nuevo producto</h1>
+            <br>
+            <form [formGroup]="form" (ngSubmit)="agregarP()">
+                <mat-grid-list cols="2" rowHeight="80px">
+                    <mat-grid-tile [colspan]="2" [rowspan]="1" rowHeight="4px">
+                        <mat-form-field class="ancho">
+                            <input autocomplete="off" matInput formControlName="nombre" type="text" placeholder="Nombre">
+                        </mat-form-field>
+                    </mat-grid-tile>                 
+                    <mat-grid-tile [colspan]="1" [rowspan]="1" >
+                        <mat-form-field>
+                            <input autocomplete="off"  matInput formControlName="precio" type="number" placeholder="Precio">
+                        </mat-form-field>
+                    </mat-grid-tile>                
+                    <mat-grid-tile [colspan]="1" [rowspan]="1" >
+                        
+                            <mat-form-field >
+                            <mat-label>Formato</mat-label>
+                            <mat-select formControlName="formato">
+                                <mat-option *ngFor="let item of formato" [value]="item">
+                                {{item}}
+                                </mat-option>
+                            </mat-select>
+                            </mat-form-field>
+                    </mat-grid-tile>                   
+                    <mat-grid-tile [colspan]="2" [rowspan]="1" >
+                        <mat-form-field class="ancho">
+                            <input autocomplete="off" matInput formControlName="marca" type="text" placeholder="Marca">
+                        </mat-form-field>
+                    </mat-grid-tile>                  
+                    <mat-grid-tile [colspan]="2" [rowspan]="1" class="ancho">
+                        <button mat-raised-button class="buttonC" style="margin-right: 20px" (click)="cancelar()">Cancelar</button>
+                        <span class="example-spacer"></span>
+                        <button type="submit" [disabled]="form.invalid" mat-raised-button class="buttonM" style="margin-right: 20px">Guardar</button>
+                    </mat-grid-tile>    
+
+                </mat-grid-list>
+            </form>
+        </mat-card-content>
+    </mat-card>
+      
+</div>
