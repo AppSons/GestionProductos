@@ -27,6 +27,7 @@ export class ProductosComponent implements OnInit {
       formato: ['', Validators.required],
       marca: ['', Validators.required],
     });
+    
     }
 
   ngOnInit() {
@@ -45,10 +46,11 @@ export class ProductosComponent implements OnInit {
       marca: this.form.value.marca,
     }
     this._productservice.agregarProducto(producto);
-    this.dialogRefProd.close();
-    
+    this.dialogRefProd.close();   
     
   }
+
+  
   
   
 
