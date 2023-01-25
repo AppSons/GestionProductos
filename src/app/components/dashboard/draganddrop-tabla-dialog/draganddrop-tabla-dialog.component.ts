@@ -2,7 +2,6 @@ import { Component, OnInit, Inject } from '@angular/core';
 
 import {  CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
-
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog} from '@angular/material/dialog';
 import { Columnas } from 'src/app/interfaces/columnas';
 
@@ -18,13 +17,16 @@ export class DraganddropTablaDialogComponent implements OnInit {
     'Formato',
     'Marca'
   ]
+  /**Falla el event */
+ // drop(event: CdkDragDrop<string[]>) {
+ //   moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+ // }
     
   drop(event: Event)  {
     if (this.isDragDrop(event)) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      moveItemInArray(this.columnas, event.previousIndex, event.currentIndex);
     }
   }
-
   isDragDrop(object: any): object is CdkDragDrop<string[]> {
     return 'previousIndex' in object;
   }
