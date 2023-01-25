@@ -1,34 +1,39 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { SharedComponent } from './components/shared/shared.component';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+
+import { SharedModule } from './components/shared/shared.module';
 import { LoginComponent } from './components/login/login.component';
-import { InicioComponent } from './components/dashboard/inicio/inicio.component';
-import { FooterComponent } from './components/dashboard/footer/footer.component';
-import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
-import { ProductosComponent } from './components/dashboard/productos/productos.component';
 import { ConfirmDialogComponent } from './components/dashboard/confirm-dialog/confirm-dialog.component';
+//
 import { DraganddropTablaDialogComponent } from './components/dashboard/draganddrop-tabla-dialog/draganddrop-tabla-dialog.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    SharedComponent,
     LoginComponent,
-    InicioComponent,
-    FooterComponent,
-    NavbarComponent,
-    ProductosComponent,
-    ConfirmDialogComponent,
+    
+  ],
+  entryComponents: [
+    ConfirmDialogComponent,    
+   // ProductoDialogComponent,
     DraganddropTablaDialogComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    SharedModule,
+    DragDropModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
