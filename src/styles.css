@@ -2,3 +2,29 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    
+    
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+.buttonM{
+    background-color: forestgreen; ;
+    color: white;
+}
+.buttonC{
+    background-color: #3d3c3c;
+    color: white;
+}
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+    color: forestgreen;
+}

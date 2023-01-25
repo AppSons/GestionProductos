@@ -1,1 +1,18 @@
-<p>inicio works!</p>
+<app-navbar></app-navbar>
+<mat-card class="mat-card">
+    <mat-card-content class="title" style="padding: 10px;">Bienvenido</mat-card-content>
+</mat-card>
+
+<mat-card class="card-content">
+    <mat-card-header>
+      <mat-card-title>Productos</mat-card-title>
+      <mat-card-subtitle>Existen  {{cantidad}} productos por revisar</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions align="end">
+      
+      <button mat-button class="buttonM"  style="margin-right: 20px" routerLink="/login">Revisar</button>
+    </mat-card-actions>
+  </mat-card>
+
+  
+
