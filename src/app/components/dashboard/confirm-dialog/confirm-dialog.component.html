@@ -1,1 +1,12 @@
-<p>confirm-dialog works!</p>
+<h3 mat-dialog-title>Confirmación</h3>
+<br>
+<div mat-dialog-content class="mat-dialog-content">
+   <p>¿Desea eliminar el elemento seleccionado?</p>
+</div>
+<br>
+<div mat-dialog-actions class="mat-dialog-actions">
+  <button mat-button (click)="onClickCancel()">Cancelar</button>
+  <button mat-button class="redButton" mat-dialog-close (click)="onClickConfirmado()"  cdkFocusInitial >Eliminar</button>
+</div>
+
+
