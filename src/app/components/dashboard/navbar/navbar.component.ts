@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.userConnected = this.userService.obtener_localStorage();
-    if(this.userConnected === null){
+    if(this.userConnected === ''){
       this.connected = false;
       console.log(this.connected);
       console.log(this.userConnected)
@@ -31,6 +31,7 @@ export class NavbarComponent implements OnInit {
   clearStorage() {
     localStorage.clear();
     this.connected = false;
+    this.userConnected === '';
     console.log(this.connected);
     this.router.navigate(['/inicio']);
   }

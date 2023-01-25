@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  public currentUser = null;
+  currentUser = [];
   constructor() {
     this.grabar_localStorage(this.currentUser);
    }
