@@ -1,1 +1,20 @@
-<p>navbar works!</p>
+<p>
+    <mat-toolbar >
+    <span class="title">Mercadona</span>
+    <span class="example-spacer"></span>
+
+        <div *ngIf="!connected " >
+            <button mat-raised-button class="buttonC"  style="margin-right: 20px" routerLink="/login">Iniciar Sesión</button>
+        </div>
+        <div *ngIf="connected" >
+            <span >{{userConnected}}</span>
+            
+            <button mat-icon-button class="material-symbols-outlined" (click)="clearStorage()"  matTooltip="Cerrar Sesión">
+                <mat-icon>logout</mat-icon>
+            </button>
+        </div>
+       
+
+    </mat-toolbar>
+</p>
+
