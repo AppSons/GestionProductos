@@ -8,19 +8,21 @@
             <form [formGroup]="form" (ngSubmit)="agregarP()">
                 <mat-grid-list cols="2" rowHeight="80px">
                     <mat-grid-tile [colspan]="2" [rowspan]="1" rowHeight="4px">
-                        <mat-form-field class="ancho">
+                        <mat-form-field class="ancho" hideRequiredMarker appearance="outline">
+                            <mat-label>Nombre</mat-label>
                             <input autocomplete="off" matInput formControlName="nombre" type="text" placeholder="Nombre">
                         </mat-form-field>
                     </mat-grid-tile>                 
                     <mat-grid-tile [colspan]="1" [rowspan]="1" >
-                        <mat-form-field>
+                        <mat-form-field hideRequiredMarker appearance="outline">
+                            <mat-label>Precio</mat-label>
                             <input autocomplete="off"  matInput formControlName="precio" type="number" placeholder="Precio">
                         </mat-form-field>
                     </mat-grid-tile>                
                     <mat-grid-tile [colspan]="1" [rowspan]="1" >
                         
                         
-                            <mat-form-field >
+                            <mat-form-field hideRequiredMarker appearance="outline">
                             <mat-label>Formato</mat-label>
                             <mat-select formControlName="formato">
                                 <mat-option *ngFor="let item of formato" [value]="item">
@@ -30,7 +32,8 @@
                             </mat-form-field>
                     </mat-grid-tile>                   
                     <mat-grid-tile [colspan]="2" [rowspan]="1" >
-                        <mat-form-field class="ancho">
+                        <mat-form-field class="ancho" hideRequiredMarker appearance="outline">
+                            <mat-label>Marca</mat-label>
                             <input autocomplete="off" matInput formControlName="marca" type="text" placeholder="Marca">
                         </mat-form-field>
                     </mat-grid-tile>                  

@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog} from '@angular/material/dialog';
 import { Producto } from 'src/app/interfaces/productos';
 import { ProductosService } from 'src/app/services/productos.service';
-
+import { ITouchSpinOptions } from 'angular-touchspin';
 
 @Component({
   selector: 'app-productos',
@@ -14,6 +14,7 @@ export class ProductosComponent implements OnInit {
 
   formato: any[] = ['Envasado', 'Kilo', 'Litro', 'Unidad'];
   form: FormGroup;
+  
     
   
 
@@ -49,6 +50,10 @@ export class ProductosComponent implements OnInit {
     this.dialogRefProd.close();   
     
   }
+
+ // TouchSpin
+
+  
 
   
   
